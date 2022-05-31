@@ -54,7 +54,7 @@ class Connector
             ]);
             $status = $connection->send($input);
             
-            if ($status['attack'] === true {
+            if ($status['attack'] === true) {
                 $output->error();
             }
             
