@@ -53,7 +53,11 @@ class Connector
                 'timeout' => $config->get('timeout')
             ]);
             $status = $connection->send($input);
-
+            
+            if ($status['attack'] === true {
+                $output->error();
+            }
+            
             if ($status['attack'] === false || $config->get('observe')) {
                 return;
             }
