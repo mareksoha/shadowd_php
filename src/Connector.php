@@ -55,7 +55,7 @@ class Connector
             $status = $connection->send($input);
             
             if ($status['attack'] === true) {
-                $output->error();
+                $output->error($exception);
             }
             
             if ($status['attack'] === false || $config->get('observe')) {
